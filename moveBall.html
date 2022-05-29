@@ -1,0 +1,36 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:rgb(0, 9, 128)"></div>
+
+<script>
+
+var velocity = 100;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+var Xmin = 0;
+var Xmax = 300;
+var Ymin = 0;
+var Ymax = 300;
+
+
+// YOUR CODE 
+// ----------------
+function moveBall() {
+  positionX = positionX + velocity;
+  positionY = positionY + velocity;
+  ball.style.left = positionX + 'px';
+  ball.style.top = positionY + "px";
+  if (positionX === Xmin || positionX > Xmax || positionY === Ymin || positionY > Ymax) {
+  velocity *= -1;
+} 
+  }
+
+setInterval(moveBall, velocity);
+</script>
